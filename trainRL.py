@@ -222,18 +222,19 @@ for e in tqdm(
 
         pred_board_pos, pred_piece = policy_net(state_board, state_piece)
 
-        # Filter out experiences with invalid actions (-1) instead of replacing them with 0
-        # This prevents false signals in training
+        # Filter out experiences with both actions invalid (-1) instead of replacing them with 0.
+        # This prevents false signals in training while keeping terminal moves that only contain
+        # a placement (action_pos) or a piece selection (action_sel).
         valid_pos_mask = action_pos != -1
         valid_sel_mask = action_sel != -1
-        valid_mask = valid_pos_mask & valid_sel_mask
+        valid_mask = valid_pos_mask | valid_sel_mask
 
-        # Skip this batch if no valid actions
+        # Skip this batch if no valid actions at all
         if torch.sum(valid_mask) == 0:
             logger.warning("No valid actions in batch, skipping...")
             continue
 
-        # Filter all data to only include valid actions
+        # Filter all data to only include transitions with at least one valid action
         state_board = state_board[valid_mask]
         state_piece = state_piece[valid_mask]
         action_pos = action_pos[valid_mask]
@@ -242,6 +243,8 @@ for e in tqdm(
         next_state_board = next_state_board[valid_mask]
         next_state_piece = next_state_piece[valid_mask]
         reward = data["reward"][valid_mask]
+        valid_pos_mask = valid_pos_mask[valid_mask]
+        valid_sel_mask = valid_sel_mask[valid_mask]
 
         # Recalculate predictions for filtered data
         pred_board_pos, pred_piece = policy_net(state_board, state_piece)
@@ -249,33 +252,47 @@ for e in tqdm(
         # se necesita hacer reshape para que gather funcione correctamente
         # gather requiere que el tensor de acciones tenga la misma cantidad de dimensiones que el tensor de valores
         dim_reshape = [-1] + [1] * (pred_piece.dim() - 1)
-        # toma los valores de las acciones seleccionadas
-        state_pos_action_values = pred_board_pos.gather(
-             1, action_pos.reshape(dim_reshape).type(torch.int64)  # solo acepta int64...
-         )
 
-        # pred_piece debe tener mismo tamaño que pred_board_pos
-        state_sel_action_values = pred_piece.gather(
-            1, action_sel.reshape(dim_reshape).type(torch.int64)
+        # Calcula los valores Q de las posiciones del tablero solo para acciones válidas
+        if torch.sum(valid_pos_mask) > 0:
+            pos_actions = action_pos[valid_pos_mask]
+            state_pos_action_values = pred_board_pos[valid_pos_mask].gather(
+                1, pos_actions.reshape(dim_reshape).type(torch.int64)
+            )
+        else:
+            state_pos_action_values = torch.empty(0, device=pred_board_pos.device)
+
+        # pred_piece debe tener mismo tamaño que pred_board_pos; solo se usan selecciones válidas
+        if torch.sum(valid_sel_mask) == 0:
+            logger.warning("No valid piece selections in batch, skipping...")
+            continue
+
+        sel_actions = action_sel[valid_sel_mask]
+        state_sel_action_values = pred_piece[valid_sel_mask].gather(
+            1, sel_actions.reshape(dim_reshape).type(torch.int64)
         )
 
         # Prealloc with 0 because final states have 0 value - adjusted for filtered data
-        valid_batch_size = torch.sum(valid_mask).item()
-        next_state_sel_values = torch.zeros(valid_batch_size)
+        valid_sel_batch_size = torch.sum(valid_sel_mask).item()
+        next_state_sel_values = torch.zeros(valid_sel_batch_size, device=pred_piece.device)
 
         # mask for non-final states in filtered data - use boolean mask directly
-        non_final_mask = ~done_batch
+        done_sel = done_batch[valid_sel_mask]
+        non_final_mask = ~done_sel
 
         with torch.no_grad():
-            _, _next_state_piece = target_net(
-                next_state_board[non_final_mask], next_state_piece[non_final_mask]
-            )
-        # OJO: solo se va a usar la segunda cabeza de salida, que es la de la pieza seleccionada
-        _v2 = _next_state_piece.max(dim=1).values
-        next_state_sel_values[non_final_mask] = _v2
+            if torch.sum(non_final_mask) > 0:
+                _, _next_state_piece = target_net(
+                    next_state_board[valid_sel_mask][non_final_mask],
+                    next_state_piece[valid_sel_mask][non_final_mask],
+                )
+                # OJO: solo se va a usar la segunda cabeza de salida, que es la de la pieza seleccionada
+                _v2 = _next_state_piece.max(dim=1).values
+                next_state_sel_values[non_final_mask] = _v2
 
         # Compute the expected Q values using filtered rewards
-        expected_state_action_values = (next_state_sel_values * GAMMA) + reward
+        reward_sel = reward[valid_sel_mask]
+        expected_state_action_values = (next_state_sel_values * GAMMA) + reward_sel
 
         loss = loss_fcn(
             state_sel_action_values, expected_state_action_values.unsqueeze(1)
