@@ -229,10 +229,20 @@ class Quarto_bot(BotAI):
             else:
                 piece_onehot = np.zeros((1, 16), dtype=float)
 
+            board_tensor = torch.from_numpy(board_matrix).float()
+            if board_tensor.dim() == 3:
+                board_tensor = board_tensor.unsqueeze(0)
+            elif board_tensor.dim() == 2:
+                board_tensor = board_tensor.view(1, 16, 4, 4)
+
+            piece_tensor = torch.from_numpy(piece_onehot).float()
+            if piece_tensor.dim() == 1:
+                piece_tensor = piece_tensor.unsqueeze(0)
+
             self.board_pos_onehot_cached, self.select_piece_onehot_cached = (
                 self.model.predict(
-                    torch.from_numpy(board_matrix).float(),
-                    torch.from_numpy(piece_onehot).float(),
+                    board_tensor,
+                    piece_tensor,
                     TEMPERATURE=self.TEMPERATURE,
                     DETERMINISTIC=self.DETERMINISTIC,
                 )

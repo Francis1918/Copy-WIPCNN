@@ -170,15 +170,16 @@ def process_match(
     p1["reward"] = result
     if result == 1:
         p2["reward"] = -1
-        p1.loc[p1.index[-1], "done"] = True
-
     elif result == -1:
         p2["reward"] = 1
-        p2.loc[p2.index[-1], "done"] = True
-
     else:
         p2["reward"] = 0
+
+    # Marcar siempre el último estado de cada jugador como terminal
+    if not p1.empty:
         p1.loc[p1.index[-1], "done"] = True
+    if not p2.empty:
+        p2.loc[p2.index[-1], "done"] = True
 
     # --- Last n states
     p1 = p1.tail(n_last_states).reset_index(drop=True)
