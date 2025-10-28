@@ -31,16 +31,6 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
 
 ---
 
-#### 🌐 Integración y Redes  
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=network" width="40" height="40" alt="Networking"/>
-  <img src="https://skillicons.dev/icons?i=linux" width="40" height="40" alt="Linux"/>
-  <img src="https://skillicons.dev/icons?i=raspberrypi" width="40" height="40" alt="IoT"/>
-  <img src="https://skillicons.dev/icons?i=security" width="40" height="40" alt="CCTV and Security Systems"/>
-</p>
-
----
-
 ### 🎯 Áreas de Interés  
 - Sistemas embebidos e integraciones hardware–software  
 - Prototipado electrónico y automatización  
@@ -77,3 +67,4 @@ Cada proyecto me permite aprender, mejorar y aportar soluciones más sólidas.
 
 📫 **¿Te interesa colaborar o compartir conocimiento?**  
 💼 Siempre abierto a proyectos de integración hardware/software y aprendizaje mutuo.  
+
