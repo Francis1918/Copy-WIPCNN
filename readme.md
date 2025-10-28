@@ -24,9 +24,6 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="40" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="40" height="40"/>
-  <img src="https://skillicons.dev/icons?i=embeddedc" width="40" height="40" alt="PIC Microcontrollers"/>
-  <img src="https://skillicons.dev/icons?i=electronics" width="40" height="40" alt="Electronics"/>
-  <img src="https://skillicons.dev/icons?i=autocad" width="40" height="40" alt="PCB Design"/>
 </p>
 
 ---
@@ -67,4 +64,5 @@ Cada proyecto me permite aprender, mejorar y aportar soluciones más sólidas.
 
 📫 **¿Te interesa colaborar o compartir conocimiento?**  
 💼 Siempre abierto a proyectos de integración hardware/software y aprendizaje mutuo.  
+
 
