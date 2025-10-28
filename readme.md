@@ -18,20 +18,25 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40"/>
 </p>
 
+---
+
 #### ⚡ Electrónica y Hardware  
 <p align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="40" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="40" height="40"/>
-  <img src="https://img.icons8.com/fluency/48/microchip.png" alt="Microcontroladores PIC" width="40" height="40"/>
-  <img src="https://img.icons8.com/color/48/pcb.png" alt="Diseño PCB" width="40" height="40"/>
-  <img src="https://img.icons8.com/color/48/electronics.png" alt="Sensores y Actuadores" width="40" height="40"/>
+  <img src="https://skillicons.dev/icons?i=embeddedc" width="40" height="40" alt="PIC Microcontrollers"/>
+  <img src="https://skillicons.dev/icons?i=electronics" width="40" height="40" alt="Electronics"/>
+  <img src="https://skillicons.dev/icons?i=autocad" width="40" height="40" alt="PCB Design"/>
 </p>
+
+---
 
 #### 🌐 Integración y Redes  
 <p align="left">
-  <img src="https://img.icons8.com/fluency/48/internet-of-things.png" alt="IoT" width="40" height="40"/>
-  <img src="https://img.icons8.com/fluency/48/cctv.png" alt="CCTV" width="40" height="40"/>
-  <img src="https://img.icons8.com/fluency/48/network-cable.png" alt="Redes" width="40" height="40"/>
+  <img src="https://skillicons.dev/icons?i=network" width="40" height="40" alt="Networking"/>
+  <img src="https://skillicons.dev/icons?i=linux" width="40" height="40" alt="Linux"/>
+  <img src="https://skillicons.dev/icons?i=raspberrypi" width="40" height="40" alt="IoT"/>
+  <img src="https://skillicons.dev/icons?i=security" width="40" height="40" alt="CCTV and Security Systems"/>
 </p>
 
 ---
