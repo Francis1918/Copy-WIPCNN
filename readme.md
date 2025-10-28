@@ -33,7 +33,8 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
 - Prototipado electrónico y automatización  
 - Sistemas IoT y de seguridad  
 - Análisis y mejora de sistemas técnicos  
-
+- CCTV
+  
 ---
 
 ### 📚 Actualmente aprendiendo  
@@ -59,3 +60,4 @@ Cada proyecto me permite aprender, mejorar y aportar soluciones más sólidas.
 
 > 💬 *"La teoría sin práctica es inútil, la práctica sin teoría es peligrosa."* — **George O.**  
 > ⚙️ *"Comprender, construir y mejorar: esa es mi forma de avanzar."* — **Francis**
+
