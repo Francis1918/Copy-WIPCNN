@@ -1,6 +1,6 @@
 # 👋 Hola, soy Francis  
 
-## 💡 Estudiante de Ingeniería en Ciencias de la Computación | Electrónica | Software  
+## 💡 Estudiante de Ingeniería en Ciencias de la Computación | Interesado profundamente en la Electrónica y Software  
 
 Apasionado por entender cómo funciona la tecnología y cómo hacer que funcione **mejor**.  
 Combino **hardware y software** para construir sistemas reales —desde sensores y microcontroladores hasta integración de redes e IoT.  
@@ -32,15 +32,18 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
 - Sistemas embebidos e integraciones hardware–software  
 - Prototipado electrónico y automatización  
 - Sistemas IoT y de seguridad  
-- Análisis y mejora de sistemas técnicos  
-- CCTV
+- Análisis y mejora de sistemas electronicos
+- Diseño de placas PCB y SMD  
+- CCTV 
+- Domotica 
+- ESP32 
   
 ---
 
 ### 📚 Actualmente aprendiendo  
 - Computación Forense 🕵️‍♂️  
 - Infraestructura de Redes 🌐  
-- Optimización de sistemas IoT y monitoreo técnico ⚙️  
+- Optimización de sistemas IoT y monitoreo ⚙️  
 
 ---
 
@@ -60,4 +63,5 @@ Cada proyecto me permite aprender, mejorar y aportar soluciones más sólidas.
 
 > 💬 *"La teoría sin práctica es inútil, la práctica sin teoría es peligrosa."* — **George O.**  
 > ⚙️ *"Comprender, construir y mejorar: esa es mi forma de avanzar."* — **Francis**
+
 
