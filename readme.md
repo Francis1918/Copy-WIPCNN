@@ -2,7 +2,7 @@
 
 ## 💡 Estudiante de Ingeniería en Ciencias de la Computación | Interesado profundamente en la Electrónica y Software  
 
-Apasionado por entender cómo funciona la tecnología y cómo hacer que funcione **mejor**.  
+Apasionado por la tecnología y cómo hacer que funcione **mejor**.  
 Combino **hardware y software** para construir sistemas reales —desde sensores y microcontroladores hasta integración de redes e IoT.  
 Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empresas de tecnología y **aportando soluciones eficientes y confiables**.  
 
@@ -22,8 +22,8 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
 
 #### ⚡ Electrónica y Hardware  
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="40" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="40" height="40"/> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="40" height="40"/> 
 </p>
 
 ---
@@ -57,11 +57,12 @@ Mi meta es seguir aprendiendo de los grandes, creciendo como profesional en empr
 
 ### 🔍 Filosofía de Trabajo  
 
-Soy persistente, curioso y siempre busco comprender el *por qué* detrás de cada sistema.  
+Soy persistente.  
 Cuando algo no funciona, me detengo, analizo, investigo y **no descanso hasta hacerlo funcionar**.  
 Cada proyecto me permite aprender, mejorar y aportar soluciones más sólidas.
 
 > 💬 *"La teoría sin práctica es inútil, la práctica sin teoría es peligrosa."* — **George O.**  
 > ⚙️ *"Comprender, construir y mejorar: esa es mi forma de avanzar."* — **Francis**
+
 
 
