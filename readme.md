@@ -59,10 +59,3 @@ Cada proyecto me permite aprender, mejorar y aportar soluciones más sólidas.
 
 > 💬 *"La teoría sin práctica es inútil, la práctica sin teoría es peligrosa."* — **George O.**  
 > ⚙️ *"Comprender, construir y mejorar: esa es mi forma de avanzar."* — **Francis**
-
----
-
-📫 **¿Te interesa colaborar o compartir conocimiento?**  
-💼 Siempre abierto a proyectos de integración hardware/software y aprendizaje mutuo.  
-
-
